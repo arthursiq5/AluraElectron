@@ -1,0 +1,14 @@
+{
+  "name": "aluratimer",
+  "version": "1.0.0",
+  "description": "Timer desenvolvido no curso de Electron da Alura",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arthur Siqueira",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.6.1"
+  }
+}
