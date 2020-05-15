@@ -8,5 +8,5 @@ app.on('ready', () => {
         height: 400
     });
 
-    mainWindow.loadURL("https://www.alura.com.br");
+    mainWindow.loadURL(`file://${__dirname}/app/index.html`);
 });
