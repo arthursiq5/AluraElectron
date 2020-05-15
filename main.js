@@ -10,3 +10,7 @@ app.on('ready', () => {
 
     mainWindow.loadURL(`file://${__dirname}/app/index.html`);
 });
+
+app.on('window-all-closed', () => {
+    app.quit();
+});
