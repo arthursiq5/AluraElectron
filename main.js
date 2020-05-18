@@ -33,3 +33,7 @@ ipcMain.on('abrir-janela-sobre', () => {
 
     sobreWindow.loadURL(`file://${__dirname}/app/sobre.html`);
 });
+
+ipcMain.on('fechar-janela-sobre', () => {
+    sobreWindow.close();
+})
