@@ -24,6 +24,9 @@ ipcMain.on('abrir-janela-sobre', () => {
             height: 200
         });
 
+        sobreWindow.on('closed', () => {
+            sobreWindow = null;
+        })
     }
 
     sobreWindow.loadURL(`file://${__dirname}/app/sobre.html`);
