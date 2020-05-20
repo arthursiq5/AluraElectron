@@ -8,7 +8,7 @@ module.exports = {
         segundos = tempo.asSeconds();
         setInterval(function () {
             segundos++;
-            el.textContent = segundosParaTempo(segundos);
+            el.textContent = this.segundosParaTempo(segundos);
         }, 1000);
     },
     
