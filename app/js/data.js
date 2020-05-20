@@ -6,6 +6,11 @@ module.exports = {
         let arquivoDoCurso = __dirname + '/data/' + curso + '.json';
         if (fs.existsSync(arquivoDoCurso)) {
             // Salva os dados
+        } else {
+            this.criaArquivoDeCurso(arquivoDoCurso, {})
+                .then(() => {
+                    // Salva os dados
+                });
         }
     }, 
     criaArquivoDeCurso(nomeArquivo, conteudoArquivo) {
