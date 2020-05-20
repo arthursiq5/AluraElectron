@@ -1,4 +1,5 @@
 const { ipcRenderer } = require('electron');
+const timer = require('./timer');
 
 let linkSobre = document.getElementById('link-sobre');
 let botaoPlay = document.querySelector('.botao-play');
