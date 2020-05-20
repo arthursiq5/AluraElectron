@@ -1,4 +1,6 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, Tray } = require('electron');
+
+let tray = null;
 
 app.on('ready', () => {
     console.log('Aplicação iniciada');
@@ -7,6 +9,8 @@ app.on('ready', () => {
         width: 600,
         height: 400
     });
+
+    tray = new Tray(__dirname + '/app/img/icon-tray.png');
 
     mainWindow.loadURL(`file://${__dirname}/app/index.html`);
 });
