@@ -7,7 +7,8 @@ module.exports = {
     iniciar(el) {
         let tempo = moment.duration(el.textContent);
         segundos = tempo.asSeconds();
-        timer = setInterval(function () {
+        clearInterval(timer);
+        timer = setInterval(() => {
             segundos++;
             el.textContent = this.segundosParaTempo(segundos);
         }, 1000);
