@@ -18,6 +18,25 @@ app.on('ready', () => {
 
     tray.setContextMenu(trayMenu);
 
+    let templateMenu = [{
+        label: 'Meu menu',
+        submenu: [
+            { label: 'Item 1' },
+            { label: 'Item 2' }
+        ]
+    }];
+    let menuPrincipal = Menu.buildFromTemplate(templateMenu);
+
+    if (process.platform == 'darwin') {
+        templateMenu.unshift({
+            label: app.getName(),
+            submenu: [
+                { label: 'Estou rodando no Mac!' }
+            ]
+        });
+    }
+    Menu.setApplicationMenu(menuPrincipal);
+
     mainWindow.loadURL(`file://${__dirname}/app/index.html`);
 });
 
