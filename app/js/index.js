@@ -41,6 +41,9 @@ ipcRenderer.on('curso-trocado', (event, nomeCurso) => {
     data.pegaDados(nomeCurso)
         .then((dados) => {
             tempo.textContent = dados.tempo;
+        }).catch((err) => {
+            console.log('O curso ainda não possui um JSON');
+            tempo.textContent = "00:00:00";
         })
     curso.textContent = nomeCurso;
 });
