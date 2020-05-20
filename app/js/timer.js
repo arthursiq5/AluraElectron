@@ -10,7 +10,12 @@ module.exports = {
             segundos++;
         }, 1000);
     },
+    
     parar() {
+
+    },
+
+    segundosParaTempo(segundos) {
 
     }
 }
