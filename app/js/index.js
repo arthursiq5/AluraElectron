@@ -7,6 +7,7 @@ let botaoPlay = document.querySelector('.botao-play');
 let imgs = ['./img/play-button.svg', './img/stop-button.svg']
 
 let tempo = document.querySelector('.tempo');
+let curso = document.querySelector('.curso');
 
 let play = false;
 
@@ -17,7 +18,7 @@ linkSobre.addEventListener('click', () => {
 
 botaoPlay.addEventListener('click', () => {
     if (play) {
-        timer.parar();
+        timer.parar(curso);
         play = false;
     } else {
         timer.iniciar(tempo);
