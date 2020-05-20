@@ -16,6 +16,6 @@ module.exports = {
     },
 
     segundosParaTempo(segundos) {
-
+        return moment().startOf('day').seconds(segundos).format("HH:mm:ss");
     }
 }
