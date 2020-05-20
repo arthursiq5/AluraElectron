@@ -1,9 +1,13 @@
 const moment = require('moment');
 
 module.exports = {
-    iniciar() {
+    iniciar(el) {
+        let tempo = moment.duration(el.textContent);
+        setInterval(function () {
 
-    }, parar() {
+        }, 1000);
+    },
+    parar() {
 
     }
 }
