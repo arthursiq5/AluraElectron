@@ -12,7 +12,21 @@ module.exports = {
                     // Salva os dados
                 });
         }
-    }, 
+    },
+    
+    adicionaTempoAoCurso(arquivoDoCurso, tempoEstudado) {
+        let dados = {
+            ultimoEstudo: new Date().toString(),
+            tempo: tempoEstudado
+        }
+        jsonfile.writeFile(arquivoDoCurso, dados)
+            .then(() => {
+                console.log('Tempo salvo com sucesso');
+            }).catch((err) => {
+                console.log(err);
+            })
+    },
+
     criaArquivoDeCurso(nomeArquivo, conteudoArquivo) {
         jsonfile
             .writeFile(nomeArquivo, conteudoArquivo)
