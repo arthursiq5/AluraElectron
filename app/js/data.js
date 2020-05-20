@@ -5,11 +5,11 @@ module.exports = {
     salvaDados(curso, tempoEstudado) {
         let arquivoDoCurso = __dirname + '/data/' + curso + '.json';
         if (fs.existsSync(arquivoDoCurso)) {
-            // Salva os dados
+            this.adicionaTempoAoCurso(arquivoDoCurso, tempoEstudado);
         } else {
             this.criaArquivoDeCurso(arquivoDoCurso, {})
                 .then(() => {
-                    // Salva os dados
+                    this.adicionaTempoAoCurso(arquivoDoCurso, tempoEstudado);
                 });
         }
     },
