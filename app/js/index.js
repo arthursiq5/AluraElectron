@@ -1,5 +1,6 @@
 const { ipcRenderer } = require('electron');
 const timer = require('./timer');
+const data = require('../../data');
 
 let linkSobre = document.getElementById('link-sobre');
 let botaoPlay = document.querySelector('.botao-play');
@@ -14,6 +15,14 @@ let play = false;
 linkSobre.addEventListener('click', () => {
     ipcRenderer.send('abrir-janela-sobre');
 });
+
+
+window.onload = () => {
+    data.pegaDados(curso.textContent)
+        .then((dados) => {
+            tempo.textContent = dados.tempo;
+        })
+};
 
 
 botaoPlay.addEventListener('click', () => {
