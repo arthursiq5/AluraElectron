@@ -7,7 +7,7 @@ module.exports = {
         let tempo = moment.duration(el.textContent);
         segundos = tempo.asSeconds();
         setInterval(function () {
-
+            segundos++;
         }, 1000);
     },
     parar() {
