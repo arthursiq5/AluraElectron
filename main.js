@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, Tray } = require('electron');
+const { app, BrowserWindow, ipcMain, Tray, Menu } = require('electron');
 
 let tray = null;
 
@@ -11,6 +11,14 @@ app.on('ready', () => {
     });
 
     tray = new Tray(__dirname + '/app/img/icon-tray.png');
+    let trayMenu = Menu.buildFromTemplate([
+        { label: 'Cursos' },
+        { label: '', type: 'separator' },
+        { label: 'JavaScript', type: 'radio' },
+        { label: 'Java', type: 'radio' },
+        { label: 'Photoshop', type: 'radio' }
+    ]);
+    tray.setContextMenu(trayMenu);
 
     mainWindow.loadURL(`file://${__dirname}/app/index.html`);
 });
