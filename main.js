@@ -38,6 +38,8 @@ app.on('ready', () => {
     Menu.setApplicationMenu(menuPrincipal);
 
     mainWindow.loadURL(`file://${__dirname}/app/index.html`);
+
+    mainWindow.openDevTools();
 });
 
 app.on('window-all-closed', () => {
