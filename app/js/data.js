@@ -1,6 +1,13 @@
 const jsonfile = require('jsonfile-promised');
+const fs = require('fs');
 
 module.exports = {
+    salvaDados(curso, tempoEstudado) {
+        let arquivoDoCurso = __dirname + '/data/' + curso + '.json';
+        if (fs.existsSync(arquivoDoCurso)) {
+            // Salva os dados
+        }
+    }, 
     criaArquivoDeCurso(nomeArquivo, conteudoArquivo) {
         jsonfile
             .writeFile(nomeArquivo, conteudoArquivo)
