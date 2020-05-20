@@ -44,3 +44,13 @@ ipcRenderer.on('curso-trocado', (event, nomeCurso) => {
         })
     curso.textContent = nomeCurso;
 });
+
+let botaoAdicionar = document.querySelector('.botao-adicionar');
+let campoAdicionar = document.querySelector('.campo-adicionar');
+
+botaoAdicionar.addEventListener('click', function () {
+    let novoCurso = campoAdicionar.value;
+    curso.textContent = novoCurso;
+    tempo.textContent = '00:00:00';
+    campoAdicionar.value = '';
+});
